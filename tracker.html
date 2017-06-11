@@ -20,8 +20,8 @@
 
         <div class="bar"> 
         <!-- <a id="button-t" href="#">tweet</a> -->
-            <p>Profile</p>
-            <div class="tracker"><p>Tracker</p></div>
+            <a href="home.html"><p>Profile</p></a>
+            <div class="tracker"><a href="home.html"><p>Previous</p></a></div>
             <span><span class="items-total">0</span> Items</span>
             <div class="action">Done</div>
         </div>
@@ -46,17 +46,8 @@
                             <div class="plus">+</div>
                             <div class="minus">-</div>
                         </div>
-                    </div>
-                    <div>
-                        <p>Lession 3</p>
-                        <div class="counter">
-                            <span class="number">0</span>
-                            <div class="plus">+</div>
-                            <div class="minus">-</div>
-                        </div>
-                    </div>
+                    </div>      
                 </div>
-
             </div>
         </div>
         <div class="item math">
@@ -96,14 +87,8 @@
             <div class="box">
                 <div class="item-icon science"></div>
                 <p>Science علم</p>
-                <div class="detail">
-                <!-- <div class="science-detail"> -->
-                    <div class="progress progress-striped">
-                      <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 100%">
-                        <span>100% Complete </span>
-                      </div>
-                        <br>
-                    </div>
+                <div class="science-detail">
+
                 </div> 
 
             </div>
@@ -156,6 +141,7 @@
                     if (data.courseDomain == "Science") {
                         $("<p>" + "Id: " + data.courseId + "</p>").appendTo(".science-detail");
                         $("<p>" + "Name: " + data.courseName + "</p>").appendTo(".science-detail");
+                        $("<p>" + "Instructor: " + data.instructorId + "</p>").appendTo(".science-detail");
                         $("<p>" + "Grade: " + data.courseMarks + "</p>").appendTo(".science-detail");
                     } else if (data.courseDomain == "English") {
                         $("<p>" + "Id: " + data.courseId + "</p>").appendTo(".english-detail");
