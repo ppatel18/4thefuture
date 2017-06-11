@@ -31,11 +31,12 @@
             
             <div class="btn-container">
                 
-                <a href="home.html">
+
                     <button class="loginBtn2">
-                  Log-In
+                        <a href="home.html">Log-In</a>
+
                 </button>
-                </a>     
+
                 
                 <button class="loginBtn loginBtn--facebook">
                   Facebook
@@ -53,28 +54,8 @@
             
         
       </div>
-      <script src="js/quote.js"></script>
+      <script src="js/login.js"></script>
       
-      <script>
-            $(document).ready(function(){
-                
-                var quote = {
-                    "riddle": "What gets wetter the more it dries?",
-                    "answer": "A towel.",
-                    "riddle": "When you look for something, why is it always in the last place you look?",
-                    "answer": "Because when you find it, you stop looking!",
-                    "riddle": "What goes up and never comes down?",
-                    "answer": "Your age."
-                }      
 
-            
-                var x = Math.floor((Math.random() * 3) + 1);
-                var str = "<p> "+ quote[x-1].riddle +"</p>";
-                $("#random_quote").append(str);
-                var answer = quote[x-1].answer;
-                console.log(answer);
-            
-            });
-      </script>
     </body>
 </html>
