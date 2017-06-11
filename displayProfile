@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html>
-    
-    <head>
-        <link rel="stylesheet" ref="css/style.css"/>
-        <link rel="stylesheet" ref="css/media.css"/>
-        <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
-        <link href="bootstrap/js/bootstrap.min.js" rel="stylesheet">
-        <link href="jquery-3.2.1.js" rel="stylesheet">
+
+<head>
+    <link rel="stylesheet" ref="css/style.css"/>
+    <link rel="stylesheet" ref="css/media.css"/>
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="bootstrap/js/bootstrap.min.js" rel="stylesheet">
+    <link href="jquery-3.2.1.js" rel="stylesheet">
 
     <style>
         img {
@@ -15,33 +15,41 @@
         }
     </style>
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
-    </head>
-    
-    <body >
-        <h1> Hi </h1>
-        <div id="listdata">
-        <ul> 
-        
-        </ul>
-        </div>
-        
-        
-        <script>
-            $(document).ready(function(){
+</head>
+
+<body >
+<h1> Hi </h1>
+<div id="listdata">
+
+</div>
+
+
+<script>
+    $(document).ready(function(){
         (function() {
             // no data for other categories besides science
-            var ourAPI = "http://34.209.38.109:8081/courses/machine+learning";
+            var ourAPI = "http://34.209.38.109:8080/location/ms/rest/get/uid1";
             $.getJSON( ourAPI, {
                 format: "json"
             })
                 .done(function( data ) {
                     console.log(data);
-                    console.log(data.courseName);
-                    
+                    $("<p>" + "Name: " + data.name + "</p>").appendTo("#listdata");
+                    $("<p>" + "Country: " + data.country + "</p>").appendTo("#listdata");
+                    $("<p>" + "Address: " + data.address + "</p>").appendTo("#listdata");
+                    $("<p>" + "Age: " + data.age + "</p>").appendTo("#listdata");
+                    $("<p>" + "Ambition: " + data.ambition + "</p>").appendTo("#listdata");
+                    $("<p>" + "Country: " + data.country + "</p>").appendTo("#listdata");
+                    $("<p>" + "IsInstructor: " + data.isInstructor + "</p>").appendTo("#listdata");
+                    $("<p>" + "IsStudent: " + data.isStudent + "</p>").appendTo("#listdata");
+                    $("<p>" + "sex " + data.sex + "</p>").appendTo("#listdata");
+                    $("<p>" + "Skills " + data.skills + "</p>").appendTo("#listdata");
+                    $("<p>" + "uid " + data.uid + "</p>").appendTo("#listdata");
+
                 });
         })();
     });
-        </script>
-    </body>
-    
+</script>
+</body>
+
 </html>
