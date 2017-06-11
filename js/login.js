@@ -1,6 +1,7 @@
 /**
  * Created by Aanya on 6/11/2017.
  */
+
 var quote = [];
 var ans = [];
 quote.push("What gets wetter the more it dries?");

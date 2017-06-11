@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        <link rel="stylesheet" ref="css/style.css"/>
+        <link rel="stylesheet" ref="css/media.css"/>
+        <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <link href="bootstrap/js/bootstrap.min.js" rel="stylesheet">
+        <link href="jquery-3.2.1.js" rel="stylesheet">
+
+    <style>
+        img {
+            height: 100px;
+            float: left;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    </head>
+    
+    <body >
+        <h1> Hi </h1>
+        <div id="listdata">
+        <ul> 
+        
+        </ul>
+        </div>
+        
+        
+        <script>
+            $(document).ready(function(){
+        (function() {
+            // no data for other categories besides science
+            var ourAPI = "http://34.209.38.109:8081/courses/machine+learning";
+            $.getJSON( ourAPI, {
+                format: "json"
+            })
+                .done(function( data ) {
+                    console.log(data);
+                    console.log(data.courseName);
+                    
+                });
+        })();
+    });
+        </script>
+    </body>
+    
+</html>

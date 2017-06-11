@@ -17,36 +17,72 @@
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
     </head>
     
-    <body >
-        <h1> Hi </h1>
+    <body>
+        <h3> Hi </h3>
         <div id="listdata"></div>
+        <div class="col-sm-8 col-md-6 col-lg-4">
         <form>
-          <div><input type="text" name="name" value="a" id="name"></div>
-          <div><input type="text" name="uid" value="uid" id="uid"></div>
-          <div><input type="text" name="age" value="age" id="age"></div>
-          <div><input type="text" name="country" value="ab" id="country"></div>
-            <div>
-                <input type="radio" name="sex" value="male" checked> Male<br>
-                <input type="radio" name="sex" value="female"> Female<br>
-                <input type="radio" name="sex" value="other"> Other <br>
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input class="form-control" type="text" name="name" value="a" id="name" placeholder="Name">
             </div>
-            <div><input type="text" name="address" value="Address" id="c"></div>
-            <input type="checkbox" name="isStudent" value="true"> Student<br>
-            <input type="checkbox" name="isInstructor" value="true" checked> Mentor<br>
+            <div class="form-group">
+                <label for="uid">User ID:</label>
+                <input class="form-control" type="text" name="uid" value="uid" id="uid" placeholder="User ID">
+            </div>
+            
+            <div class="row">
+                <div class="form-group col-sm-4 col-md-4">
+                    <label for="age">Age:</label>
+                    <input class="form-control" type="text" name="age" value="age" id="age" placeholder="Age">
+                </div>
+                <div class="form-group col-sm-8">
+                    <label for="country">Country:</label>
+                    <input class="form-control" type="text" name="country" value="ab" id="country" placeholder="Country">
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label class="checkbox-inline">
+                    <input type="radio" name="sex" value="male" checked> Male<br>
+                </label>
+                <label class="checkbox-inline">
+                <input type="radio" name="sex" value="female"> Female<br>
+                </label>
+                <label class="checkbox-inline">
+                <input type="radio" name="sex" value="other"> Other <br>
+                </label>
+            </div>
+            
+            <div class="form-group">
+                <label for="c">Address:</label>
+                <input class="form-control" type="text" name="address" value="Address" id="c">
+            </div>
+            
+            <div class="checkbox">
+                <label>    
+                    <input type="checkbox" name="isStudent" value="true"> Student<br>
+                </label>
+                <label>
+                    <input type="checkbox" name="isInstructor" value="true" checked> Mentor<br>
+                </label>
+            </div>
+            
             <div>
             <textarea name="Skills" value= "Skills" rows="8" cols="40">Skills</textarea>
-          </div>
-
-
-
-          <div>
-            <input type="submit" name="g" value="Submit" id="g">
-          </div>
+            </div>
         </form>
+        
+        <a href="home.html">
+            <button class="btn btn-default" type="submit" name="g" value="Submit" id="g">Submit</button>
+          </a>
+          
+    </div>
+        
         <div id ="content"></div>
-        <div id ="result">result posted</div>
-        JSON.parse(JSON.stringify(jQuery('#frm').serializeArray()))
-        <script>
+        <div id ="result" class="help-block"></div>
+        
+       <!-- <script>
             var jsonData;
             var result =[];
             $( "form" ).submit(function( event ) {
@@ -90,10 +126,10 @@
                     dataType: "json",
                     success: function (response) {
                         var resp = JSON.parse(response)
-                        alert(resp.status);
+                      //if(confirm("You have been registered"))gotohome();
                     },
                     error: function (xhr, status) {
-                        alert("error");
+                        //alert("error");
                     }
                 });
 
@@ -132,13 +168,8 @@
                 })();
 
             });
-
-
-
-
-
-
-        </script>
+        </script> -->
+        
     </body>
     
 </html>
