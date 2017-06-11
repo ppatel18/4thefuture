@@ -1,0 +1,273 @@
+
+* {box-sizing:border-box}
+html,body {height:100%}
+body {
+  background: #d3e2d4;
+  background: linear-gradient(135deg, #d3e2d4,#819083) top left fixed;
+  font: 15px 'Ubuntu', sans-serif;
+  line-height:1;
+  min-height:580px;
+  -webkit-font-smoothing: antialiased;
+}
+
+.paper {
+  width:280px;
+  height:480px;
+  border-radius:4px;
+  box-shadow: 0 5px 25px rgba(0,0,0,.15);
+  position:absolute;
+  top:50px;
+  right:50%
+}
+
+.box {width:100%;height:100%;overflow:hidden;border-radius:4px}
+.bar {
+  height:80px;
+  background: #f7ffce;
+  background:linear-gradient(135deg,#f7ffce,#e2e4b8);
+  border-radius:4px 4px 0 0;
+  color:#af9a50;
+  padding:20px;
+  box-shadow: 0 2px 5px rgba(0,0,0,.3);
+  position:relative;
+  z-index:5
+}
+.profile {float:left;width:12px}
+.profile span {
+  height:1px;
+  background:#af9a50;
+  display:block;
+  margin-bottom:3px;
+}
+.bar p {
+  float:left;
+  margin-left:10px;
+  margin-top:-3px;
+}
+.bar .action {
+  float:right;
+  margin-top:-13px
+}
+.bar>span {  
+   float:left;
+   width:100%;
+   margin-top:22px
+}
+.tracker p {
+  float: right;
+  margin-right:10px;
+  margin-top:-3px;
+}
+.item {
+  height:100px;
+  padding:20px;
+  box-shadow: 0 4px 5px rgba(0,0,0,.3);
+  position:relative;
+  font-size:21px;
+  -webkit-transition:all 200ms ease;
+  transition:all 200ms ease;
+}
+
+.item>.box>p {
+  line-height:60px;
+  -webkit-transition:all 200ms ease;
+  transition:all 200ms ease;
+}
+.detail {
+  font-size:17px;
+  -webkit-transition:all 200ms ease;
+  transition:all 200ms ease;
+  opacity:0
+ 
+}
+.detail div {line-height:35px}
+.detail .counter,.detail p {float:left;width:50%}
+.detail>div {float:left;width:100%}
+.detail .counter {text-align:right}
+.detail .counter div {
+ width:29px;
+ height:20px;
+ float:right;
+ text-align:center;
+ line-height:20px;
+ margin-top:7px;
+ cursor: pointer
+}
+.detail .counter .plus {
+  margin-left:1px;
+  border-radius:0 30px 30px 0;
+}
+.detail .counter .minus {
+  margin-right:1px;
+  margin-left:11px;
+  border-radius:30px 0 0 30px;
+}
+
+.item.english {
+  background: #ffe26f;
+  background:linear-gradient(135deg,#ffe26f,#e8c962);
+  z-index:4;
+  color:#e07556; 
+}
+.item.english .detail .counter div {background: #FFF2BE}
+
+.item.math {
+  background: #f3825f;
+  background:linear-gradient(135deg,#f3825f,#f3825f);
+  z-index:3;
+  color:#9c3c53;
+}
+.item.math .detail .counter div {background: #FFC5B2}
+
+.item.science {
+  background: #a7425c;
+  background:linear-gradient(135deg,#a7425c,#993950);
+  z-index:2;
+  color:#402344;
+}
+.item.science .detail .counter div {background: #ECA9BA}
+
+.item.history {
+  background: #563761;
+  background:linear-gradient(135deg,#563761,#502f55);
+  z-index:1;
+  color:#1c1730;
+  border-radius:0 0 4px 4px
+}
+.item.history .detail .counter div {background: #8A7193}
+
+.item-icon {  
+  height:60px;
+  width:65px;
+  float:left;
+  margin-right:10px;
+  -webkit-transition:all 200ms ease;
+  transition:all 200ms ease;
+  -webkit-transform: translateZ(0);-moz-transform: translateZ(0);-ms-transform: translateZ(0);transform: translateZ(0);
+}
+.item-icon.english {background-position:0 0}
+.item-icon.math {background-position:-70px 0}
+.item-icon.science {background-position:-137px 0}
+.item-icon.history {background-position:-208px 0}
+
+/** Active **/
+.paper.item-active .item {height:60px;padding:0 20px}
+.paper.item-active .item.active {height:260px;padding:20px;-webkit-transform: translateZ(0);-moz-transform: translateZ(0);-ms-transform: translateZ(0);transform: translateZ(0);}
+.item.active .item-icon {
+  -webkit-transform:scale(1.5) translateZ(0);
+  -ms-transform:scale(1.5) translateZ(0);
+  -moz-transform:scale(1.5) translateZ(0);
+  transform:scale(1.5) translateZ(0);
+  margin:0 auto;
+  float:none;
+}
+.item.active>.box>p {
+  font-size:31px;
+  text-align:center
+}
+.item.active .detail {opacity:1}
+
+/** Extra For Previewing **/
+.item .number,.paper.preview-1 .bar .action {
+    display:none
+}
+.paper.preview-1 {
+  margin-right:20px;
+}
+.paper.preview-2 {
+  margin-right:-300px;
+}
+/** making some things unselectable **/
+.item>.box>p,.counter {
+  -moz-user-select: -moz-none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+.item>.box>p {
+  cursor: default
+}
+ 
+
+/* Pop out pushable buttons */
+/*#button-t {
+width:80px;
+height:20px;
+display:block;
+font-family:Arial, "Helvetica", sans-serif;
+font-size:14px;
+font-weight:bold;
+color:#fff;
+text-decoration:none;
+text-transform:uppercase;
+text-align:center;
+text-shadow:1px 1px 0px #2389AF;
+padding:8px 20px 4px 10px;
+margin-left:auto;
+margin-right:auto;
+left:20px;
+position:relative;
+cursor:pointer;
+border-left:solid 1px #2ab7ec;
+-webkit-user-select: none;
+-moz-user-select: none;
+-o-user-select: none;
+user-select: none;
+background:#50C4F0;
+-webkit-border-top-right-radius: 5px;
+-webkit-border-bottom-right-radius: 5px;
+-moz-border-radius-topright: 5px;
+-moz-border-radius-bottomright: 5px;
+border-top-right-radius: 5px;
+border-bottom-right-radius: 5px;
+-webkit-box-shadow: inset 0px 1px 0px #50C4F0, 0px 5px 0px 0px #2593BD;
+-moz-box-shadow: inset 0px 1px 0px #50C4F0, 0px 5px 0px 0px #2593BD;
+-o-box-shadow: inset 0px 1px 0px #50C4F0, 0px 5px 0px 0px #2593BD;
+box-shadow: inset 0px 1px 0px #50C4F0, 0px 5px 0px 0px #2593BD;
+}
+
+#button-t:active {
+top:3px;
+-webkit-box-shadow: inset 0px 1px 0px #50C4F0, 0px 2px 0px 0px #2593BD;
+-moz-box-shadow: inset 0px 1px 0px #50C4F0, 0px 2px 0px 0px #2593BD;
+-o-box-shadow: inset 0px 1px 0px #50C4F0, 0px 2px 0px 0px #2593BD;
+box-shadow: inset 0px 1px 0px #50C4F0, 0px 2px 0px 0px #2593BD;
+}
+
+#button-t:before {
+content:url(http://www.mshaefer.com/wp-content/themes/zwin/images/social_twitter.png);
+width:18px;
+height:22px;
+display:block;
+position:absolute;
+padding:5px;
+top:0px;
+margin-left:-37px;
+font-size:16px;
+font-weight:bold;
+color:#8fd1ea;
+text-shadow:1px 1px 0px #07526e;
+border-right:solid 1px #2EA4CF;
+background:#22A8DA;
+-webkit-border-top-left-radius: 5px;
+-webkit-border-bottom-left-radius: 5px;
+-moz-border-radius-topleft: 5px;
+-moz-border-radius-bottomleft: 5px;
+border-top-left-radius: 5px;
+border-bottom-left-radius: 5px;
+-webkit-box-shadow:inset 0px 1px 0px #50C4F0, 0px 5px 0px 0px #1F7797;
+-moz-box-shadow:inset 0px 1px 0px #50C4F0, 0px 5px 0px 0px #1F7797;
+-o-box-shadow:inset 0px 1px 0px #50C4F0, 0px 5px 0px 0px #1F7797;
+box-shadow:inset 0px 1px 0px #50C4F0, 0px 5px 0px 0px #1F7797;
+}
+
+#button-t:active:before {
+top:-3px;
+-webkit-box-shadow:inset 0px 1px 0px #50C4F0, 0px 5px 0px 0px #1F7797, 1px 1px 0px 0px #2593BD, 2px 2px 0px 0px #2593BD, 2px 5px 0px 0px #2593BD, 6px 4px 2px #0b698b;
+-moz-box-shadow:inset 0px 1px 0px #50C4F0, 0px 5px 0px 0px #1F7797, 1px 1px 0px 0px #2593BD, 2px 2px 0px 0px #2593BD, 2px 5px 0px 0px #2593BD, 6px 4px 2px #0b698b;
+-o-box-shadow:inset 0px 1px 0px #50C4F0, 0px 5px 0px 0px #1F7797, 1px 1px 0px 0px #2593BD, 2px 2px 0px 0px #2593BD, 2px 5px 0px 0px #2593BD, 6px 4px 2px #0b698b;
+box-shadow:inset 0px 1px 0px #50C4F0, 0px 5px 0px 0px #1F7797, 1px 1px 0px 0px #2593BD, 2px 2px 0px 0px #2593BD, 2px 5px 0px 0px #2593BD, 4px 4px 6px #2593BD;
+}*/
+
+/* End code for popout pushable button */
