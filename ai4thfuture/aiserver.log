@@ -1,0 +1,12 @@
+[2017-Jun-11 05:03] 127.0.0.1 GET http /courses/machine+learning/? 5xx INTERNAL SERVER ERROR
+Traceback (most recent call last):
+  File "/home/kj/Workspace/ai4thfuture/main.py", line 147, in courses
+    'fields': dumps(['photoUrl', 'domainTypes', 'categories'])
+  File "/home/kj/Workspace/ai4thfuture/.venv/lib/python3.5/site-packages/bson/__init__.py", line 40, in dumps
+    generator_func=generator, on_unknown=on_unknown)
+  File "/home/kj/Workspace/ai4thfuture/.venv/lib/python3.5/site-packages/bson/codec.py", line 223, in encode_document
+    key_iter = iterkeys(obj)
+  File "/home/kj/Workspace/ai4thfuture/.venv/lib/python3.5/site-packages/six.py", line 575, in iterkeys
+    return iter(d.keys(**kw))
+AttributeError: 'list' object has no attribute 'keys'
+
