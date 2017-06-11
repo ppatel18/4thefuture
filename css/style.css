@@ -3,7 +3,9 @@
   --darkgray: #2E2E2E;
   --bordercolor: #B3B3B3;
 }
-
+#random_quote{
+  padding: 3%;
+}
 
 /*Initialize*/
 h1, h2, h3, h4 {
