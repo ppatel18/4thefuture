@@ -136,3 +136,24 @@ h3 {
   background-color: #5B7BD5;
   background-image: linear-gradient(#5B7BD5, #4864B1);
 }
+
+/*VR Styles*/
+
+#activity-rules {
+  position: fixed;
+  opacity: .5;
+  text-align: center;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  
+}
+
+  #activity-rules p {
+    position: fixed;
+    padding: 10px 10px;
+  }
+  
+  #speech_answer {
+    transition: opacity 1s 3s;
+  }
