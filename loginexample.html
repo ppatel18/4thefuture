@@ -1,0 +1,28 @@
+v id="main" class="container">
+        <div class="row">
+            <center><h1><b>UML Parser</b></h1></center>
+        </div>
+        <div class="row">
+            <center><h2><b>Grader</b></h2></center>
+        </div>
+        <div class="row">
+            <div class="col-md-4 col-md-offset-4">
+                <div class="panel panel-default">
+                    <div class="panel-heading clearfix">
+                        <form class="form-auth" ng-submit="login()">
+                            <h2>Log In</h2>
+                            <input type="username" ng-model="user.username" placeholder="Username" class="form-control"><br>
+                            <input type="password" ng-model="user.password" placeholder="Password" class="form-control"><br>
+                            <input type="submit" value="Log in" class="btn btn-primary"/>
+                        </form>
+
+                        <div class="alert alert-danger" ng-show="isNotMatch">
+                            <strong>Username!</strong> or <strong>Password</strong> is wrong.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
