@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">Tutor</string>
+    <string name="dialog_No_Internet">No Internet Connection</string>
+    <string name="open_settings">Open Settings</string>
+    <string name="cancel">Cancel</string>
+</resources>
