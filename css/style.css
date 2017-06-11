@@ -157,3 +157,11 @@ h3 {
   #speech_answer {
     transition: opacity 1s 3s;
   }
+  
+  
+  /*Quote Generator*/
+  
+  #random_quote {
+      font-family: 'Roboto', sans-serif;
+      font-size: 1em;
+  }
