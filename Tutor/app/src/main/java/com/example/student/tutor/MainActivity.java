@@ -14,6 +14,7 @@ import android.location.LocationManager;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.Uri;
+import android.os.Handler;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -28,6 +29,8 @@ import android.widget.Toast;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -67,7 +70,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
         //Loading page from server
-        myWebView.loadUrl("http://ec2-54-245-72-223.us-west-2.compute.amazonaws.com:3000");
+        myWebView.loadUrl("http://34.209.38.109:8080/4thefuture/login.html");
 
 
         LocationManager locationManager = (LocationManager) getApplication().getSystemService(Context.LOCATION_SERVICE);
@@ -119,13 +122,38 @@ public class MainActivity extends AppCompatActivity {
                 Toast toast = Toast.makeText(context, text, duration);
                 toast.show();
             } else {
-                latitude = 37.484515;
-                longitude = -122.147799;
+                //latitude = 37.484515;
+                //longitude = -122.147799;
+//                latitude=37.482934;
+//                longitude=-122.150254;
+               //latitude = 37.479780;
+                //longitude = -122.151278;
+                latitude = 37.479141;
+                longitude = -122.145077;
+
             }
         }
 
-        SmsManager smsManager = SmsManager.getDefault();
-        smsManager.sendTextMessage("6692949501", null,"Latitude:" + latitude + " Longitude:" + longitude , null, null);
+
+        int delay = 0; // delay for 0 sec.
+        int period = 20000; // repeat every 10 sec.
+//        Timer timer = new Timer();
+//        timer.scheduleAtFixedRate(new TimerTask() {
+//            public void run() {
+//                //Call function
+//
+//                System.out.println("SENDING...");
+//                double latitude = 37.479141;
+//                double longitude = -122.145077;
+//                SmsManager smsManager = SmsManager.getDefault();
+//                smsManager.sendTextMessage("6692949501", null, "Latitude:" + latitude + " Longitude:" + longitude, null, null);
+//
+//            }
+//        }, delay, period);
+//        System.out.println("Hello");
+
+//        SmsManager smsManager = SmsManager.getDefault();
+//        smsManager.sendTextMessage("6692949501", null,"Latitude:" + latitude + " Longitude:" + longitude , null, null);
 
         Cursor cursor = getContentResolver().query(Uri.parse("content://sms/inbox"), null, null, null, null);
 

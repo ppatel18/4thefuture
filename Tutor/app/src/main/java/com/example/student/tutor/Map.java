@@ -15,6 +15,7 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.android.gms.maps.model.PolylineOptions;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -28,6 +29,8 @@ public class Map  extends FragmentActivity implements OnMapReadyCallback {
     public List<String> locationList;
     private LatLng p1 = null;
     private Address location = null;
+    List<LatLng> latLngs = new ArrayList<LatLng>();
+    private PolylineOptions mPolyLineOptions;
 
     public Map(){}
 
@@ -68,6 +71,7 @@ public class Map  extends FragmentActivity implements OnMapReadyCallback {
                     double[] lonlatOut = parse(locationList.get(i));
 
                     p1 = new LatLng(lonlatOut[0], lonlatOut[1]);
+                    latLngs.add(p1);
                     marker = map.addMarker(new MarkerOptions()
                             .position(p1));
 
@@ -80,9 +84,19 @@ public class Map  extends FragmentActivity implements OnMapReadyCallback {
                     Toast toast = Toast.makeText(context, text, duration);
                     toast.show();
                 }
+                mPolyLineOptions = new PolylineOptions();
+                Iterable<LatLng> latLngsList = latLngs;
+                mPolyLineOptions.addAll(latLngsList);
+                map.addPolyline(mPolyLineOptions);
+
+                map.moveCamera(CameraUpdateFactory.newLatLngZoom(latLngs.get(latLngs.size() -1),15));
+
+
             }
         }
     }
+
+
     public double[] parse(String input) {
         double [] output = new double[2];
 
