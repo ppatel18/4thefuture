@@ -179,8 +179,24 @@
                 .done(function( data ) {
                     console.log(data);
                     console.log(data.courseName);
-                    $("<p>" + data.courseId + "</p>").appendTo(".detail");
-                    $("<p>" + data.courseName + "</p>").appendTo(".detail");
+                    if (data.courseDomain == "Science") {
+                        $("<p>" + "Id: " + data.courseId + "</p>").appendTo(".science-detail");
+                        $("<p>" + "Name: " + data.courseName + "</p>").appendTo(".science-detail");
+                        $("<p>" + "Grade: " + data.courseMarks + "</p>").appendTo(".science-detail");
+                    } else if (data.courseDomain == "English") {
+                        $("<p>" + "Id: " + data.courseId + "</p>").appendTo(".english-detail");
+                        $("<p>" + "Name: " + data.courseName + "</p>").appendTo(".english-detail");
+                        $("<p>" + "Difficulty: " + data.courseDifficulty + "</p>").appendTo(".english-detail");    
+                    } else if (data.courseDomain == "Math") {
+                        $("<p>" + "Id: " + data.courseId + "</p>").appendTo(".math-detail");
+                        $("<p>" + "Name: " + data.courseName + "</p>").appendTo(".math-detail");
+                        $("<p>" + "Difficulty: " + data.courseDifficulty + "</p>").appendTo(".math-detail");    
+                    } else if (data.courseDomain == "History") {
+                        $("<p>" + "Id: " + data.courseId + "</p>").appendTo(".history-detail");
+                        $("<p>" + "Name: " + data.courseName + "</p>").appendTo(".history-detail");
+                        $("<p>" + "Difficulty: " + data.courseDifficulty + "</p>").appendTo(".history-detail");    
+                    }
+
                 });
         })();
     });
