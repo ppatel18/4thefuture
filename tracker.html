@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html >
+<head>
+    <meta charset="UTF-8">
+    <title>Landing page Interface</title>
+  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+
+    <link rel='stylesheet prefetch' href='http://fonts.googleapis.com/css?family=Ubuntu+Condensed'>
+
+    <link rel="stylesheet" href="css/style.css">
+  
+</head>
+
+<body>
+
+<div class="paper preview-1">
+    <div class="box">
+
+
+        <div class="bar"> 
+        <!-- <a id="button-t" href="#">tweet</a> -->
+            <p>Profile</p>
+            <div class="tracker"><p>Tracker</p></div>
+            <span><span class="items-total">0</span> Items</span>
+            <div class="action">Done</div>
+        </div>
+        <div class="item english">
+            <div class="box">
+                <div class="item-icon english"></div>
+                <p>English الإنجليزية</p>
+                <div class="detail">
+                    <div>
+                        <p>Lesson 1</p>
+                        <div class="counter">
+                            <span class="number">0</span>
+                            <div class="plus">+</div>
+                            <div class="minus">-</div>
+
+                        </div>
+                    </div>
+                    <div>
+                        <p>Lesson 2</p>
+                        <div class="counter">
+                            <span class="number">0</span>
+                            <div class="plus">+</div>
+                            <div class="minus">-</div>
+                        </div>
+                    </div>
+                    <div>
+                        <p>Lession 3</p>
+                        <div class="counter">
+                            <span class="number">0</span>
+                            <div class="plus">+</div>
+                            <div class="minus">-</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="item math">
+            <div class="box">
+                <div class="item-icon math"></div>
+                <p>Math الرياضيات</p>
+                <div class="detail">
+                    <div>
+                        <p>Lesson 1</p>
+                        <div class="counter">
+                            <span class="number">0</span>
+                            <div class="plus">+</div>
+                            <div class="minus">-</div>
+
+                        </div>
+                    </div>
+                    <div>
+                        <p>Lesson 2</p>
+                        <div class="counter">
+                            <span class="number">0</span>
+                            <div class="plus">+</div>
+                            <div class="minus">-</div>
+                        </div>
+                    </div>
+                    <div>
+                        <p>Lesson 3</p>
+                        <div class="counter">
+                            <span class="number">0</span>
+                            <div class="plus">+</div>
+                            <div class="minus">-</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="item science">
+            <div class="box">
+                <div class="item-icon science"></div>
+                <p>Science علم</p>
+                <div class="detail">
+                <!-- <div class="science-detail"> -->
+                    <div class="progress progress-striped">
+                      <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 100%">
+                        <span>100% Complete </span>
+                      </div>
+                        <br>
+                    </div>
+                </div> 
+
+            </div>
+        </div>
+        <div class="item history">
+            <div class="box">
+                <div class="item-icon history"></div>
+                <p>History التاريخ</p>
+                <div class="detail">
+                <!-- <div class="history-detail"> -->
+                    <div>
+                        <p>Lesson 1</p>
+                        <div class="counter">
+                            <span class="number">0</span>
+                            <div class="plus">+</div>
+                            <div class="minus">-</div>
+
+                        </div>
+                    </div>
+                    <div>
+                        <p>Lesson 2</p>
+                        <div class="counter">
+                            <span class="number">0</span>
+                            <div class="plus">+</div>
+                            <div class="minus">-</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id ="content"></div>
+<!-- <div id ="result">result posted</div> -->
+
+    <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+
+    <script src="js/index.js"></script>
+
+<script>
+    $(document).ready(function(){
+        (function() {
+            var ourAPI = "http://34.209.38.109:8080/location/ms/rest/getCourse/cs1";
+            $.getJSON( ourAPI, {
+                format: "json"
+            })
+                .done(function( data ) {
+                    console.log(data);
+                    console.log(data.courseName);
+                    if (data.courseDomain == "Science") {
+                        $("<p>" + "Id: " + data.courseId + "</p>").appendTo(".science-detail");
+                        $("<p>" + "Name: " + data.courseName + "</p>").appendTo(".science-detail");
+                        $("<p>" + "Grade: " + data.courseMarks + "</p>").appendTo(".science-detail");
+                    } else if (data.courseDomain == "English") {
+                        $("<p>" + "Id: " + data.courseId + "</p>").appendTo(".english-detail");
+                        $("<p>" + "Name: " + data.courseName + "</p>").appendTo(".english-detail");
+                        $("<p>" + "Difficulty: " + data.courseDifficulty + "</p>").appendTo(".english-detail");    
+                    } else if (data.courseDomain == "Math") {
+                        $("<p>" + "Id: " + data.courseId + "</p>").appendTo(".math-detail");
+                        $("<p>" + "Name: " + data.courseName + "</p>").appendTo(".math-detail");
+                        $("<p>" + "Difficulty: " + data.courseDifficulty + "</p>").appendTo(".math-detail");    
+                    } else if (data.courseDomain == "History") {
+                        $("<p>" + "Id: " + data.courseId + "</p>").appendTo(".history-detail");
+                        $("<p>" + "Name: " + data.courseName + "</p>").appendTo(".history-detail");
+                        $("<p>" + "Difficulty: " + data.courseDifficulty + "</p>").appendTo(".history-detail");    
+                    }
+
+                });
+        })();
+    });
+</script>
+
+</body>
+</html>
